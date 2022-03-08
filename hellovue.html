@@ -6,16 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document2</title>
 </head>
-<body>
-    <div id="app">
-        {{ message }}
-    </div>
+<body id ="body">
+    <!-- {{ message }} -->
+    <h2 id="app" class="app">
+        <!-- {{ message }} -->
+        {{ school.name }}
+        <!-- <span> {{message}} </span> -->
+        <ul>
+            <li>{{ campus[0] }}</li>
+            <li>{{ campus[1] }}</li>
+            <li>{{ campus[2] }}</li>
+        </ul>
+        <select name="" id=""> <option value="1">{{message}}</option></select>
+        
+    </h2>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script>
         var app = new Vue({
             el: "#app",
+            //el: "div",
+            //el: "#app",
+            //el: "#body",
             data:{
-                message: "Hello Vue222333444!"
+                message: "Hello Vue222333444!",
+                school:{
+                    name:"nameabc",
+                    bobile:"0222222222"
+                },
+                campus:["北京","上海","廣州"]
             }
         })
     </script>
