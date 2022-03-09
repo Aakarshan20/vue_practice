@@ -7,10 +7,36 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div id="app">
+        <input type="button" value="v-on 事件綁定(點擊)" v-on:click="clickIt">
+        <input type="button" value="v-on 事件綁定(滑鼠移入)" v-on:mouseenter="mouseEnterIt">
+        <input type="button" value="v-on 事件綁定(雙擊)" v-on:dblclick="doubleClickIt">
+        <input type="button" value="@ 事件綁定(雙擊)" @dblclick="doubleClickIt">
+        <h2 @click = "changeFood">{{ food }}</h2>
+    </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 <script>
-    
+    var app = new Vue({
+        el:"#app",
+        data:{
+            food:"西蘭花炒蛋"
+        },
+        methods:{
+            clickIt:function(){
+                alert("clickIt")
+            },
+            mouseEnterIt:function(){
+                alert("mouseEnterIt")
+            },
+            doubleClickIt:function(){
+                alert("doubleClickIt")
+            },
+            changeFood:function(){
+                //console.log(this.food)
+                this.food += "好好吃"
+            }
+        }
+    })
 </script>
 </html>
